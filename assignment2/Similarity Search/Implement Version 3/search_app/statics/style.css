@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+#body {
+    width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+h3 {
+    margin: 10px auto;
+}
+
+#select {
+    margin: 10px auto;
+}
+
+input {
+    display: none;
+}
+
+form {
+    display: inline-block;
+}
+
+button img {
+    width: 150px;
+    height: 150px;
+}
+
+#neighbors {
+    display: inline-block;
+    width: 200px;
+    margin: 20px;
+}
+
+#neighbors p {
+    margin: 5px auto;
+}
+
+#neighbors img {
+    width: 200px;
+    height: 200px;
+}

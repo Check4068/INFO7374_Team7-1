@@ -1,0 +1,40 @@
+<!-- <form method="get">
+    <input id='q' name='q' type='text' placeholder="your search">
+</form> -->
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '/style.css' %}">
+
+<div id="body">
+    <h3>Search Similar Images</h3>
+    <div id="select">
+        <form method='get'>
+            <input id='q' name='q' value="YAR45970">
+            <button type='submit'><img src="/static/searchApp/c2535cf647be0949529ddb8e78beaaf79ac0bd53.jpg" </button>
+        </form>
+        <form method='get'>
+            <input id='q' name='q' value="YAR45061">
+            <button type='submit'><img src="/static/searchApp/c715c4465c351f0b06415fb9a1ccbd946327fb23.jpg" </button>
+        </form>
+        <form method='get'>
+            <input id='q' name='q' value="YAR45014">
+            <button type='submit'><img src="/static/searchApp/b3179a1855d492eb3313b59b82a1e29e8850eb92.jpg" </button>
+        </form>
+        <form method='get'>
+            <input id='q' name='q' value="YAR45795">
+            <button type='submit'><img src="/static/searchApp/bc5abcac7a0c9ea0e6eb2be8a6b17921fed84bdf.jpg" </button>
+        </form>
+        <form method='get'>
+            <input id='q' name='q' value="YAR45026">
+            <button type='submit'><img src="/static/searchApp/0536ef5660e47128e9fde8a25f547db0785b2851.jpg" </button>
+        </form>
+    </div>
+    {% for item in posts %}
+    {% if item.similarity < 1 %}
+    <div id="neighbors">
+        <p>The similarity score is {{ item.similarity }}</p>
+        <img src="{{item.url}}">
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>

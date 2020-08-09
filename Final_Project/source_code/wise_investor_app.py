@@ -37,7 +37,7 @@ genre = genre_list[genre_selected]
 # select box for director
 director_list = ('Select from the dropdown list', 'Steven Spielberg',
                  'Clint Eastwood', 'Woody Allen', 'Martin Scorsese', 'Ridley Scott', 'Brian De Palma', 'Steven Soderbergh', 'Wes Craven',
-                 'Francis Ford Coppola', 'Ron Howard', 'other_director')
+                 'Francis Ford Coppola', 'Ron Howard', 'Other Director')
 director_selected = st.selectbox('Select the movie director', options=list(
     range(len(director_list))), format_func=lambda x: director_list[x])
 director = director_list[director_selected]
@@ -45,7 +45,7 @@ director = director_list[director_selected]
 # select box for produce company
 company_list = ('Select from the dropdown list', 'Universal Pictures',
                 'Paramount', 'Columbia Pictures', 'Warner Bros. Pictures', '20th Century Fox', 'New Line Cinema', 'Walt Disney Pictures', 'Touchstone Pictures',
-                'Miramax', 'Metro-Goldwyn-Mayer', 'other_company')
+                'Miramax', 'Metro-Goldwyn-Mayer', 'Other Company')
 company_selected = st.selectbox('Select the produce company', options=list(
     range(len(company_list))), format_func=lambda x: company_list[x])
 company = company_list[company_selected]
@@ -79,6 +79,7 @@ if len(budget) != 29 and len(length) != 29 and len(genre) != 29 and len(director
     # Display the prediction
     df_pre = predict_data.loc[(similar_data[budget] == 1) & (similar_data[length] == 1) &
                               (similar_data[genre] == 1) & (similar_data[director] == 1) & (similar_data[company] == 1)]
+    print(df_pre)
     if df_pre.empty:
         st.write(
             'Very few similar movies has been invested before, the movie is not recommended to invest.')
